@@ -15,19 +15,6 @@ def load_images(file_name):
     img = np.array(img)  # Convert to NumPy array
     img = img.reshape(1, -1)  # Flatten to (1, 784) shape
     return img
-<<<<<<< HEAD
-
-# List of image file names and their corresponding actual labels
-image_data = [
-    ('2_0.jpg', 2),
-    ('2_1.jpg', 2),
-    ('2_2.jpg', 2),
-    ('2_3.jpg', 2),
-    ('2_4.jpg', 2)
-]
-
-correct_predictions = 0
-=======
 
 # List of image file names and their corresponding actual labels
 image_data = [
@@ -50,22 +37,4 @@ for file_name, actual_label in image_data:
 
 accuracy = (correct_predictions / len(image_data)) * 100
 print(f"Accuracy: {accuracy:.2f}%")
-
-
-
-
->>>>>>> 649a568 (update1)
-
-for file_name, actual_label in image_data:
-    x_test = load_images(file_name)
-    predics = np.argmax(net.predict(x_test), axis=1)
-    print(f"Prediction for {file_name}: {predics[0]} (Actual: {actual_label})")
-    
-    if predics[0] == actual_label:
-        correct_predictions += 1
-
-accuracy = (correct_predictions / len(image_data)) * 100
-print(f"Accuracy: {accuracy:.2f}%")
-
-
 
