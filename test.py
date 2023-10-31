@@ -37,3 +37,6 @@ for file_name, actual_label in image_data:
 
 accuracy = (correct_predictions / len(image_data)) * 100
 print(f"Accuracy: {accuracy:.2f}%")
+
+
+
