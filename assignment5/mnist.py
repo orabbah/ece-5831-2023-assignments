@@ -8,8 +8,6 @@ class Mnist():
     img_size = 28*28
     model_file_name = 'model/sample_weight.pkl'
     key_file = {
-        'train_img':    'mnist/train-images-idx3-ubyte.gz',
-        'train_label':  'mnist/train-labels-idx1-ubyte.gz',
         'test_img':     'mnist/t10k-images-idx3-ubyte.gz',
         'test_label':   'mnist/t10k-labels-idx1-ubyte.gz'
     }
@@ -17,11 +15,7 @@ class Mnist():
     def __init__(self):
         self.network = None
 
-    ## new function --> I will provide this function
-    def load_mnist(self): 
-        return (x_train, t_train), (x_test, t_test)
-
-
+    
     def load_images(self):
         pass
 
