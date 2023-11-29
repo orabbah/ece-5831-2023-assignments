@@ -21,16 +21,6 @@ import matplotlib.pyplot as plt
 from keras.applications import VGG16
 
 
-
-
-#data_from_kaggle = "data-from-kaggle/train"
-
-#data_dirname = "dogs-vs-cats"
-
-#train_dir = os.path.join(base_dir, 'train')
-#validation_dir = os.path.join(base_dir, 'validation')
-#test_dir = os.path.join(base_dir, 'test')
-#datagen = ImageDataGenerator(rescale=1./255)
 batch_size = 20
 
 class dogs_cats_fine():
@@ -150,13 +140,17 @@ class dogs_cats_fine():
                     batch_size=20,
                     class_mode='binary')
              model.compile(loss='binary_crossentropy',
-                    optimizer=optimizers.RMSprop(lr=1e-5),
+                    optimizer=optimizers.RMSprop(learning_rate=3e-5),
                     metrics=['acc'])
              
              history = model.fit(
-                train_generator,
+                train_datagen.flow_from_directory(
+                    train_dir,
+                    target_size=(180, 180),
+                    batch_size=20,
+                    class_mode='binary'),
                 steps_per_epoch=100,
-                epochs=30,
+                epochs=11,
                 validation_data=validation_generator,
                 validation_steps=50)
              
